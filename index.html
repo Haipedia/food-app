@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>COSC_307 Individual Assignment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <nav class="navbar">
+            <div class="brand-logo">
+                <span class="brand-main">Chef Hussaini's</span>
+                <span class="brand-sub">Fusion Kitchen</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#recipe-section">Recipe</a></li>
+                <li><a href="#order">Order Online</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <button id="theme-toggle" title="Switch Theme"><i class="fas fa-moon"></i></button>
+                <a href="#order" class="btn-nav">Order Now</a>
+            </div>
+        </nav>
+
+        <header id="home" class="hero">
+            <div class="hero-content">
+                <span class="subtitle">A Culinary Masterpiece</span>
+                <h1>Taste the <span class="highlight">Heritage</span></h1>
+                <p>From the plains of Northern Nigeria to the global stage.</p>
+                <div class="hero-btns">
+                    <a href="#menu" class="btn-primary">View Menu</a>
+                    <a href="#recipe-section" class="btn-secondary">Cook at Home <i class="fas fa-utensils"></i></a>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <section id="menu">
+                <div class="section-header">
+                    <h2>Our Signature Menu</h2>
+                    <p>Curated selections for the refined palate.</p>
+
+                    <div class="slider-controls">
+                        <button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                        <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="menu-tabs">
+                    <button class="menu-tab active" onclick="filterMenu('all')">All Dishes</button>
+                    <button class="menu-tab" onclick="filterMenu('naija')">🇳🇬 Naija Classics</button>
+                    <button class="menu-tab" onclick="filterMenu('global')">🌎 Global VIP</button>
+                </div>
+
+                <div class="slider-container">
+                    <div class="slider-track" id="sliderTrack">
+                        <div class="food-card naija">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Smoky Jollop Rice.jpg" alt="Jollof" />
+                            <div class="card-details">
+                                <div class="price">₦3,500</div>
+                                <h3>Smoky Party Jollof</h3>
+                                <p>The national treasure with chicken.</p>
+                            </div>
+                        </div>
+                        <div class="food-card naija">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Pounded Yam and Egusi Soup.webp" alt="Egusi" />
+                            <div class="card-details">
+                                <div class="price">₦4,000</div>
+                                <h3>Pounded Yam & Egusi</h3>
+                                <p>Rich melon soup with assorted meat.</p>
+                            </div>
+                        </div>
+                        <div class="food-card naija">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Tuwon Shinkafa with Miyar Kuka.webp" alt="Tuwo" />
+                            <div class="card-details">
+                                <div class="price">₦2,500</div>
+                                <h3>Tuwon Shinkafa</h3>
+                                <p>Soft rice swallow with Miyan Kuka.</p>
+                            </div>
+                        </div>
+                        <div class="food-card naija">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Amala & Gbegiri.jpg" alt="Amala" />
+                            <div class="card-details">
+                                <div class="price">₦3,000</div>
+                                <h3>Amala & Gbegiri</h3>
+                                <p>Dark yam flour with bean soup.</p>
+                            </div>
+                        </div>
+                        <div class="food-card naija">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Suya Street Grill.jpg" alt="Suya" />
+                            <div class="card-details">
+                                <div class="price">₦2,500</div>
+                                <h3>Spicy Beef Suya</h3>
+                                <p>Yaji-spiced street grill.</p>
+                            </div>
+                        </div>
+                        <div class="food-card naija">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Beef-Fried-Rice-blog-2.jpg" alt="Fried Rice" />
+                            <div class="card-details">
+                                <div class="price">₦3,500</div>
+                                <h3>Special Fried Rice</h3>
+                                <p>Loaded with veggies and prawns.</p>
+                            </div>
+                        </div>
+                        <div class="food-card naija">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Catfish Peppersoup.jpg" alt="Pepper Soup" />
+                            <div class="card-details">
+                                <div class="price">₦4,500</div>
+                                <h3>Catfish Pepper Soup</h3>
+                                <p>Spicy, aromatic broth.</p>
+                            </div>
+                        </div>
+                        <div class="food-card naija">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/akara-beans-cake and pap.webp" alt="Akara" />
+                            <div class="card-details">
+                                <div class="price">₦1,500</div>
+                                <h3>Hot Akara & Pap</h3>
+                                <p>The ultimate breakfast duo.</p>
+                            </div>
+                        </div>
+                        <div class="food-card naija">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Roasted Tilafia and Plantainjpg.jpg" alt="Plantain" />
+                            <div class="card-details">
+                                <div class="price">₦2,000</div>
+                                <h3>Boli & Fish sauce</h3>
+                                <p>Roasted plantain street style.</p>
+                            </div>
+                        </div>
+                        <div class="food-card naija">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/bitterleaf-soup.webp" alt="Soup" />
+                            <div class="card-details">
+                                <div class="price">₦4,000</div>
+                                <h3>Ofe Onugbu</h3>
+                                <p>Traditional bitterleaf soup.</p>
+                            </div>
+                        </div>
+
+                        <div class="food-card global">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Bugger.jpg" alt="Burger" />
+                            <div class="card-details">
+                                <div class="price">₦5,000</div>
+                                <h3>The 'Boss' Burger</h3>
+                                <p>Double patty, bacon, cheese.</p>
+                            </div>
+                        </div>
+                        <div class="food-card global">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Italian-pepperoni-Pizza-1152x1536.webp" alt="Pizza" />
+                            <div class="card-details">
+                                <div class="price">₦6,500</div>
+                                <h3>Pepperoni Feast</h3>
+                                <p>Wood-fired Italian pizza.</p>
+                            </div>
+                        </div>
+                        <div class="food-card global">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Chicken-Alfredo-Low-Res-21-1024x1536.webp" alt="Pasta" />
+                            <div class="card-details">
+                                <div class="price">₦5,500</div>
+                                <h3>Chicken Alfredo</h3>
+                                <p>Creamy pasta with grilled chicken.</p>
+                            </div>
+                        </div>
+                        <div class="food-card global">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Sushi.avif" alt="Sushi" />
+                            <div class="card-details">
+                                <div class="price">₦8,000</div>
+                                <h3>Tokyo Sushi Set</h3>
+                                <p>Fresh salmon and tuna rolls.</p>
+                            </div>
+                        </div>
+                        <div class="food-card global">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Ribeye Steak with Veggies.jpg" alt="Steak" />
+                            <div class="card-details">
+                                <div class="price">₦12,000</div>
+                                <h3>Ribeye Steak</h3>
+                                <p>Grilled medium-rare with veggies.</p>
+                            </div>
+                        </div>
+                        <div class="food-card global">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Beef birria tacos with consommé.webp" alt="Tacos" />
+                            <div class="card-details">
+                                <div class="price">₦4,500</div>
+                                <h3>Street Tacos trio</h3>
+                                <p>Beef birria tacos with consommé.</p>
+                            </div>
+                        </div>
+                        <div class="food-card global">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Ramen with Pork Belly.webp" alt="Ramen" />
+                            <div class="card-details">
+                                <div class="price">₦6,000</div>
+                                <h3>Spicy Miso Ramen</h3>
+                                <p>Noodle soup with pork belly.</p>
+                            </div>
+                        </div>
+                        <div class="food-card global">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Rich Indian curry with naan bread.webp" alt="Curry" />
+                            <div class="card-details">
+                                <div class="price">₦5,000</div>
+                                <h3>Butter Chicken Curry</h3>
+                                <p>Rich Indian curry with naan bread.</p>
+                            </div>
+                        </div>
+                        <div class="food-card global">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Sea Food Fella.avif" alt="Paella" />
+                            <div class="card-details">
+                                <div class="price">₦7,000</div>
+                                <h3>Seafood Paella</h3>
+                                <p>Spanish saffron rice with seafood.</p>
+                            </div>
+                        </div>
+                        <div class="food-card global">
+                            <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Meditteranian with Salad.avif" alt="Salad" />
+                            <div class="card-details">
+                                <div class="price">₦3,500</div>
+                                <h3>Mediterranean Salad</h3>
+                                <p>Fresh salad with feta cheese.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="recipe-section">
+                <div class="section-header">
+                    <h2>The Masterclass</h2>
+                    <p>Learn our secret technique.</p>
+                </div>
+
+                <div class="recipe-container">
+                    <div class="recipe-visual">
+                        <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Smoky Party Jollof.jpg" alt="Main Dish" />
+                        <div class="recipe-overlay">
+                            <h2>Smoky Party Jollof</h2>
+                            <p>The National Treasure</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe-logic">
+                        <h3>Cooking Calculator</h3>
+
+                        <div class="portion-control">
+                            <label>Servings:</label>
+                            <select id="portionSelector" onchange="calculateIngredients()">
+                                <option value="1">2 People</option>
+                                <option value="2" selected>4 People</option>
+                                <option value="5">10 People (Party)</option>
+                            </select>
+                        </div>
+
+                        <div class="tabs">
+                            <button class="tab-btn active" onclick="openTab(event, 'ingredients')">Ingredients</button>
+                            <button class="tab-btn" onclick="openTab(event, 'steps')">Method</button>
+                        </div>
+
+                        <div id="ingredients" class="tab-content active-content">
+                            <table class="smart-table">
+                                <thead>
+                                    <tr>
+                                        <th>✓</th>
+                                        <th>Item</th>
+                                        <th>Qty</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ingredientBody"></tbody>
+                            </table>
+                        </div>
+
+                        <div id="steps" class="tab-content">
+                            <ol class="step-list">
+                                <li>Blend tomatoes, peppers, onions.</li>
+                                <li>Fry tomato paste in oil (5 mins).</li>
+                                <li>Add blend, curry, thyme, stock. Boil.</li>
+                                <li>Add washed rice, cover with foil.</li>
+                                <li>Simmer 30 mins. Serve!</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="order" class="content-block">
+                <div class="section-header">
+                    <h2>Place Your Order</h2>
+                    <p>Fast delivery within Saminaka & Lere</p>
+                </div>
+
+                <div class="order-card">
+                    <div class="order-form">
+    <form onsubmit="placeOrder(event)">
+        
+        <div class="form-group">
+            <label>Select Your Dishes (Check all that apply):</label>
+            <div class="checkbox-menu">
+                <label><input type="checkbox" value="3500" onclick="updatePrice()"> Smoky Party Jollof (₦3,500)</label>
+                <label><input type="checkbox" value="4000" onclick="updatePrice()"> Pounded Yam & Egusi (₦4,000)</label>
+                <label><input type="checkbox" value="2500" onclick="updatePrice()"> Tuwo Shinkafa (₦2,500)</label>
+                <label><input type="checkbox" value="3000" onclick="updatePrice()"> Amala & Gbegiri (₦3,000)</label>
+                <label><input type="checkbox" value="2500" onclick="updatePrice()"> Spicy Beef Suya (₦2,500)</label>
+                <label><input type="checkbox" value="3500" onclick="updatePrice()"> Special Fried Rice (₦3,500)</label>
+                <label><input type="checkbox" value="4500" onclick="updatePrice()"> Catfish Pepper Soup (₦4,500)</label>
+                <label><input type="checkbox" value="1500" onclick="updatePrice()"> Hot Akara & Pap (₦1,500)</label>
+                <label><input type="checkbox" value="2000" onclick="updatePrice()"> Boli & Fish Sauce (₦2,000)</label>
+                <label><input type="checkbox" value="4000" onclick="updatePrice()"> Ofe Onugbu (₦4,000)</label>
+                
+                <label class="vip-label">--- Global VIP ---</label>
+                <label><input type="checkbox" value="5000" onclick="updatePrice()"> The 'Boss' Burger (₦5,000)</label>
+                <label><input type="checkbox" value="6500" onclick="updatePrice()"> Pepperoni Feast Pizza (₦6,500)</label>
+                <label><input type="checkbox" value="5500" onclick="updatePrice()"> Chicken Alfredo (₦5,500)</label>
+                <label><input type="checkbox" value="8000" onclick="updatePrice()"> Tokyo Sushi Set (₦8,000)</label>
+                <label><input type="checkbox" value="12000" onclick="updatePrice()"> Ribeye Steak (₦12,000)</label>
+                <label><input type="checkbox" value="4500" onclick="updatePrice()"> Street Tacos (₦4,500)</label>
+                <label><input type="checkbox" value="6000" onclick="updatePrice()"> Spicy Miso Ramen (₦6,000)</label>
+                <label><input type="checkbox" value="5000" onclick="updatePrice()"> Butter Chicken Curry (₦5,000)</label>
+                <label><input type="checkbox" value="7000" onclick="updatePrice()"> Seafood Paella (₦7,000)</label>
+                <label><input type="checkbox" value="3500" onclick="updatePrice()"> Mediterranean Salad (₦3,500)</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Number of Packs (for selected items)</label>
+            <input type="number" id="qtyInput" value="1" min="1" onchange="updatePrice()">
+        </div>
+
+        <div class="form-group">
+            <label>Discount Code</label>
+            <div class="coupon-box">
+                <input type="text" id="couponCode" placeholder="Enter Code...">
+                <button type="button" onclick="applyCoupon()">Apply</button>
+            </div>
+            <small id="couponMsg"></small>
+        </div>
+        
+        <div class="total-box">
+            <span>Total Bill:</span>
+            <h3 id="finalPrice">₦0</h3>
+        </div>
+
+        <button type="submit" class="btn-primary full-width">Confirm Order</button>
+    </form>
+</div>
+
+                    <div class="order-features">
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <div>
+                                <h4>30 Min Delivery</h4>
+                                <small>Hot & Fresh</small>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>Halal Certified</h4>
+                                <small>100% Compliance</small>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-wallet"></i>
+                            <div>
+                                <h4>Payment on Delivery</h4>
+                                <small>Cash or Transfer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="reviews" class="content-block">
+                <div class="section-header">
+                    <h2>Client Love</h2>
+                    <p>What the foodies are saying.</p>
+                </div>
+
+                <div class="review-grid">
+                    <div class="review-card">
+                        <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Abubakar.jpg" alt="User" />
+                        <p>"The Tuwo is softer than clouds. Absolutely authentic."</p>
+                        <h5>- Abubakar A.A.</h5>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <div class="review-card">
+                        <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Hussaini.png" alt="User" />
+                        <p>"I used Dr. Otegwu's code and got a huge discount! Best burger ever."</p>
+                        <h5>- Hussaini A.I.</h5>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <div class="review-card">
+                        <img src="https://haipedia.github.io/COSC307-Group-Assignment-/Ahmad.jpg" alt="User" />
+                        <p>"Fast delivery and the packaging was premium."</p>
+                        <h5>- Ahmad A.I.</h5>
+                        <div class="stars">★★★★☆</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="content-block">
+                <div class="section-header">
+                    <h2>Your Voice Matters</h2>
+                    <p>Help us curate our next menu.</p>
+                </div>
+
+                <div class="feedback-card">
+                    <form onsubmit="event.preventDefault(); alert('Thanks! We will try this recipe.');">
+                        <label>What should Chef Hussaini cook next?</label>
+                        <textarea placeholder="e.g. Masa and Miyan Taushe..." required></textarea>
+
+                        <button type="submit" class="btn-primary">Submit Suggestion</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="brand-logo">
+                        <span class="brand-main" style="color: gold">Chef Hussaini's</span>
+                        <span class="brand-sub" style="color: yellow">Fusion Kitchen</span>
+                    </div>
+                    <p style="margin-top: 12px">
+                        Authentic fusion cuisine blending the best of Nigerian spices with global standards.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#order">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Saminka, Kaduna State</li>
+                        <li><i class="fas fa-phone"></i> +234 806 595 1832</li>
+                        <li><i class="fas fa-envelope"></i> order@chefhussain.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <form onsubmit="event.preventDefault(); alert('Subscribed!');">
+                        <input type="email" placeholder="Enter email" required />
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: yellow">
+                    &copy; 2025 Hussaini Aliyu Ismaeel | ABUDLC Course307 Individual Assignment.<br />Submitted to the
+                    course tutor: Dr. Otegwu James.
+                </p>
+            </div>
+        </footer>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
